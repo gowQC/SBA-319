@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "i": "^0.3.7",
+    "jsx-view-engine": "^1.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.8.4",
+    "nodemon": "^3.1.7"
+  }
+}
