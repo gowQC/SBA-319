@@ -6,6 +6,7 @@
  * npm install method-override
  * npm install body-parser
  * npm install mongoose
+ * npm install dotenv
  */
 
 // initialize standard variables
@@ -128,8 +129,8 @@ app.use((req, res, next) => {
 
 // use and apply routes
 app.use("/api/grades", gradeRoutes);
-app.use("/api/tasks", taskRoutes);
-app.use("/api/workouts", workoutRoutes);
+// app.use("/api/tasks", taskRoutes);
+// app.use("/api/workouts", workoutRoutes);
 
 app.get("/", (req, res) => {
   res.send(
@@ -145,20 +146,16 @@ app.get("/help", (req, res) => {
 app.get("/grades", async (req, res) => {
   try {
     const foundGrades = await Grade.find({});
-    res.status(200).render("grades/Index", { grades: foundGrades });
+    res.status(200).render("gradesViews/GradesView", { foundGrades });
   } catch (err) {
     res.send(err).status(400);
   }
 });
 
-app.get("/grades/new", (req, res) => {
-  res.render("grades/New");
-});
-
-app.get("/grades/:id/edit", async (req, res) => {
+app.get("/grades/modify", async (req, res) => {
   try {
-    const foundGrade = await Grade.findById(req.params.id);
-    res.render("grades/Edit", { grade: foundGrade, id: req.params.id });
+    const foundGrades = await Grade.find({});
+    res.render("gradesViews/ModifyGradesView", { foundGrades });
   } catch (err) {
     res.status(400).send(err);
   }
