@@ -14,11 +14,14 @@ class Help extends React.Component {
             progress. Try replacing 'help' with these:
           </h1>
           <ul>
-            <h2>Grades Routes:</h2>
+            <h2>Grades Related Routes:</h2>
+            <li>'http://localhost:5050/grades'</li>
+            <li>'http://localhost:5050/grades/modify'</li>
             <li>'http://localhost:5050/api/grades'</li>
             <li>'http://localhost:5050/api/grades?courseName='</li>
-            <li>'http://localhost:5050/api/grades/seed'</li>
             <li>'http://localhost:5050/api/grades/:courseName'</li>
+            <li>'http://localhost:5050/api/grades/seed'</li>
+
             <br />
             <h2>Tasks Routes:</h2>
             <li>'http://localhost:5050/api/tasks'</li>
