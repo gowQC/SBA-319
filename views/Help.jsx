@@ -24,7 +24,11 @@ class Help extends React.Component {
 
             <br />
             <h2>Tasks Routes:</h2>
+            <li>'http://localhost:5050/tasks'</li>
+            <li>'http://localhost:5050/tasks/modify'</li>
             <li>'http://localhost:5050/api/tasks'</li>
+            <li>'http://localhost:5050/api/tasks?task_number='</li>
+            <li>'http://localhost:5050/api/tasks/:task_number'</li>
             <li>'http://localhost:5050/api/tasks/seed'</li>
             <br />
             <h2>Workouts Routes:</h2>

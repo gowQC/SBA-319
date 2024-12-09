@@ -29,18 +29,47 @@ This page presents all the options available for the user to navigate through.
 - http://localhost:5050/api/grades
 
 * Shows user the current data of the 'grades' collection as an array of objects
-* Supports GET, POST, and PUT methods
-* GET methods allow for ?courseName={string} query, searching through course_name field of documents
+* Supports GET, POST, and PUT requests
+* GET method allows for ?courseName={string} query, searching through the course_name field of documents
 
 - http://localhost:5050/api/grades/:courseName
 
 * Shows the user the data rquested through the use of the 'courseName' request parameter, sourced from the 'grades' collection as an object
-* Supports GET methods
+* Supports GET requests
 
 - http://localhost:5050/api/grades/seed
 
 * Used to initialize the data of the 'grades' collection
+* Supports GET requests
 
 # Tasks Related Routes
+
+- http://localhost:5050/tasks
+
+* Shows user the current data of the 'tasks' collection in a rendered view
+* Presents a navigational link that directs towards 'http://localhost:5050/tasks/modify'
+* Supports GET requests
+
+- http://localhost:5050/tasks/modify
+
+* Displays small form underneath the current data of the 'tasks' collection
+* Form allows for the modification of the preset tasks, then redirects the user to the render of the http://localhost:3000/tasks page containing only the modified data as an li element
+* Supports GET requests
+
+- http://localhost:5050/api/tasks
+
+* Shows user the current data of the 'tasks' collection as an array of objects
+* Supports GET and PUT requests
+* GET method allows for ?task_number={number} query, searching through the task_number field of documents
+
+- http://localhost:5050/api/tasks/:task_number
+
+* Shows the user the data rquested through the use of the 'task_number' request parameter, sourced from the 'tasks' collection as an object
+* Supports GET requests
+
+- http://localhost:5050/api/tasks/seed
+
+* Used to initialize the data of the 'tasks' collection
+* Supports GET requests
 
 # Workouts Related Routes
