@@ -29,7 +29,7 @@ class ModifyGradesView extends React.Component {
             ))}
           </ul>
           <h3>PUT Form - Update existing grade</h3>
-          <form action={`/api/grades/?_method=PUT`} method="POST">
+          <form action={`/api/grades?_method=PUT`} method="POST">
             <label htmlFor="course_name">Select Current Grade:</label>
             <select type="text" id="course_name_PUT" name="course_name">
               {foundGrades.map((grade) => (

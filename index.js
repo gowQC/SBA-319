@@ -41,7 +41,7 @@ app.engine("jsx", jsxViewEngine());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 app.use(methodOverride("_method"));
-app.use(express.static("public"));
+app.use(express.static("public/static"));
 
 // setting time variable as let because it will eventually be reset when x amount of minutes pass
 let dueTime = new Date();
@@ -83,7 +83,7 @@ app.use((req, res, next) => {
   next();
 });
 
-function checkAll() {
+async function checkAll() {
   let myBoolean = true;
   // will implement checks to see if all completed/passing values are true
   // for (let i = 0; i < todoListData.length; i++) {
@@ -129,7 +129,7 @@ app.use((req, res, next) => {
 
 // use and apply routes
 app.use("/api/grades", gradeRoutes);
-// app.use("/api/tasks", taskRoutes);
+app.use("/api/tasks", taskRoutes);
 // app.use("/api/workouts", workoutRoutes);
 
 app.get("/", (req, res) => {
@@ -165,23 +165,16 @@ app.get("/grades/modify", async (req, res) => {
 app.get("/tasks", async (req, res) => {
   try {
     const foundTasks = await Task.find({});
-    res.status(200).render("tasks/Index", { tasks: foundTasks });
+    res.status(200).render("tasksViews/TasksView", { foundTasks });
   } catch (err) {
     res.send(err).status(400);
   }
 });
 
-app.get("/tasks/new", (req, res) => {
-  res.render("tasks/New");
-});
-
-app.get("/tasks/:id/edit", async (req, res) => {
+app.get("/tasks/modify", async (req, res) => {
   try {
-    const foundTask = await Task.findById(req.params.id);
-    res.render("tasks/Edit", {
-      task: foundTask,
-      id: req.params.id,
-    });
+    const foundTasks = await Task.find({});
+    res.render("tasksViews/ModifyTasksView", { foundTasks });
   } catch (err) {
     res.status(400).send(err);
   }
@@ -195,10 +188,6 @@ app.get("/workouts", async (req, res) => {
   } catch (err) {
     res.send(err).status(400);
   }
-});
-
-app.get("/workouts/new", (req, res) => {
-  res.render("workouts/New");
 });
 
 app.get("/workouts/:id/edit", async (req, res) => {

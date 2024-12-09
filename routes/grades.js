@@ -50,7 +50,6 @@ router
       );
       data = [req.body];
       res.status(200).render("gradesViews/GradesView", { data });
-      // res.redirect(`/api/grades/`);
     } catch (error) {
       res.status(400).send(error);
     }

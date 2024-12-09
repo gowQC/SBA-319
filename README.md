@@ -14,13 +14,13 @@ This page presents all the options available for the user to navigate through.
 
 # Grades Related Routes
 
-- http://localhost:3000/grades
+- http://localhost:5050/grades
 
 * Shows user the current data of the 'grades' collection in a rendered view
-* Presents a navigational link that directs towards 'http://localhost:3000/grades/modify'
+* Presents a navigational link that directs towards 'http://localhost:5050/grades/modify'
 * Supports GET requests
 
-- http://localhost:3000/grades/modify
+- http://localhost:5050/grades/modify
 
 * Displays small form underneath the current data of the 'grades' collection
 * Form allows for either the addition of a new grade or the modification of an already existing grade, then redirects the user to the render of the http://localhost:3000/grades page containing only the modified data as an li element
