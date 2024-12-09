@@ -79,6 +79,16 @@ router.get("/seed", async (req, res) => {
           grade: 60,
           passing: false,
         },
+        {
+          course_name: "Acting",
+          grade: 55,
+          passing: false,
+        },
+        {
+          course_name: "Robotics",
+          grade: 30,
+          passing: false,
+        },
       ]);
       res.status(200).redirect("/api/grades");
     }

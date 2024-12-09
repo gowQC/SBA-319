@@ -130,7 +130,7 @@ app.use((req, res, next) => {
 // use and apply routes
 app.use("/api/grades", gradeRoutes);
 app.use("/api/tasks", taskRoutes);
-// app.use("/api/workouts", workoutRoutes);
+app.use("/api/workouts", workoutRoutes);
 
 app.get("/", (req, res) => {
   res.send(
@@ -184,16 +184,16 @@ app.get("/tasks/modify", async (req, res) => {
 app.get("/workouts", async (req, res) => {
   try {
     const foundWorkouts = await Workout.find({});
-    res.status(200).render("workouts/Index", { workouts: foundWorkouts });
+    res.status(200).render("workoutsViews/WorkoutsView", { foundWorkouts });
   } catch (err) {
     res.send(err).status(400);
   }
 });
 
-app.get("/workouts/:id/edit", async (req, res) => {
+app.get("/workouts/modify", async (req, res) => {
   try {
-    const foundWorkout = await Workout.findById(req.params.id);
-    res.render("workouts/Edit", { workout: foundWorkout, id: req.params.id });
+    const foundWorkouts = await Workout.find({});
+    res.render("workoutsViews/ModifyWorkoutsView", { foundWorkouts });
   } catch (err) {
     res.status(400).send(err);
   }

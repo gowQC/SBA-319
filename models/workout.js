@@ -4,8 +4,8 @@ const workoutSchema = new mongoose.Schema(
   {
     workout_name: { type: String, require: true, unique: true, dropDups: true },
     currently_completed: { type: Number, required: true, default: 0 },
-    current_best: { type: Number, required: true },
-    completed: { type: Boolean, required: true },
+    current_best: { type: Number, required: true, default: 0 },
+    completed: { type: Boolean, required: true, default: false },
   },
   {
     timestamps: true,
