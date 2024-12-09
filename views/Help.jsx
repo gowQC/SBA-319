@@ -21,7 +21,6 @@ class Help extends React.Component {
             <li>'http://localhost:5050/api/grades?courseName='</li>
             <li>'http://localhost:5050/api/grades/:courseName'</li>
             <li>'http://localhost:5050/api/grades/seed'</li>
-
             <br />
             <h2>Tasks Routes:</h2>
             <li>'http://localhost:5050/tasks'</li>
@@ -32,7 +31,10 @@ class Help extends React.Component {
             <li>'http://localhost:5050/api/tasks/seed'</li>
             <br />
             <h2>Workouts Routes:</h2>
+            <li>'http://localhost:5050/workouts'</li>
+            <li>'http://localhost:5050/workouts/modify'</li>
             <li>'http://localhost:5050/api/workouts'</li>
+            <li>'http://localhost:5050/api/workouts?workout_name='</li>
             <li>'http://localhost:5050/api/workouts/seed'</li>
           </ul>
           <p>

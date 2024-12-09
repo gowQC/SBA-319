@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Workout = require("../models/workout");
 
+// http://localhost:5050/api/workouts
 router
   .route("/")
   .get(async (req, res) => {
@@ -72,6 +73,7 @@ router
     }
   });
 
+// http://localhost:5050/api/workouts/seed
 router.get("/seed", async (req, res) => {
   try {
     const count = await Workout.countDocuments({});

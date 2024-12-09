@@ -23,7 +23,7 @@ This page presents all the options available for the user to navigate through.
 - http://localhost:5050/grades/modify
 
 * Displays small form underneath the current data of the 'grades' collection
-* Form allows for either the addition of a new grade or the modification of an already existing grade, then redirects the user to the render of the http://localhost:3000/grades page containing only the modified data as an li element
+* Form allows for either the addition of a new grade or the modification of an already existing grade, then redirects the user to the render of the http://localhost:5050/grades page containing only the modified data as an li element
 * Supports GET requests
 
 - http://localhost:5050/api/grades
@@ -34,7 +34,7 @@ This page presents all the options available for the user to navigate through.
 
 - http://localhost:5050/api/grades/:courseName
 
-* Shows the user the data rquested through the use of the 'courseName' request parameter, sourced from the 'grades' collection as an object
+* Shows the user the data requested through the use of the 'courseName' request parameter, sourced from the 'grades' collection as an object
 * Supports GET requests
 
 - http://localhost:5050/api/grades/seed
@@ -53,7 +53,7 @@ This page presents all the options available for the user to navigate through.
 - http://localhost:5050/tasks/modify
 
 * Displays small form underneath the current data of the 'tasks' collection
-* Form allows for the modification of the preset tasks, then redirects the user to the render of the http://localhost:3000/tasks page containing only the modified data as an li element
+* Form allows for the modification of the preset tasks, then redirects the user to the render of the http://localhost:5050/tasks page containing only the modified data as an li element
 * Supports GET requests
 
 - http://localhost:5050/api/tasks
@@ -64,7 +64,7 @@ This page presents all the options available for the user to navigate through.
 
 - http://localhost:5050/api/tasks/:task_number
 
-* Shows the user the data rquested through the use of the 'task_number' request parameter, sourced from the 'tasks' collection as an object
+* Shows the user the data requested through the use of the 'task_number' request parameter, sourced from the 'tasks' collection as an object
 * Supports GET requests
 
 - http://localhost:5050/api/tasks/seed
@@ -73,3 +73,26 @@ This page presents all the options available for the user to navigate through.
 * Supports GET requests
 
 # Workouts Related Routes
+
+- http://localhost:5050/workouts
+
+* Shows user the current data of the 'workouts' collection in a rendered view
+* Presents a navigational link that directs towards 'http://localhost:5050/workouts/modify'
+* Supports GET requests
+
+- http://localhost:5050/workouts/modify
+
+* Displays small form underneath the current data of the 'workouts' collection
+* Form allows for the addition of a new workout, the modification of an already existing workout, or the deletion of an existing workout, then redirects the user to the render of the http://localhost:5050/workouts page
+* Supports GET requests
+
+- http://localhost:5050/api/workouts
+
+* Shows user the current data of the 'workouts' collection as an array of objects
+* Supports GET, POST, PUT, and DELETE requests
+* GET method allows for ?workout_name={string} query, searching through the workout_name field of documents
+
+- http://localhost:5050/api/tasks/seed
+
+* Used to initialize the data of the 'workouts' collection
+* Supports GET requests
