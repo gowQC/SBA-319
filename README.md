@@ -92,7 +92,7 @@ This page presents all the options available for the user to navigate through.
 * Supports GET, POST, PUT, and DELETE requests
 * GET method allows for ?workout_name={string} query, searching through the workout_name field of documents
 
-- http://localhost:5050/api/tasks/seed
+- http://localhost:5050/api/workouts/seed
 
 * Used to initialize the data of the 'workouts' collection
 * Supports GET requests
