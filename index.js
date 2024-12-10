@@ -32,6 +32,20 @@ const Grade = require("./models/grade");
 const Task = require("./models/task");
 const Workout = require("./models/workout");
 
+// initialize indexes for Task and Workout models (none for Grade model)
+async function initializeIndexes() {
+  await Task.init();
+  await Workout.init();
+}
+
+initializeIndexes()
+  .then(() => {
+    console.log("Indexes initialized.");
+  })
+  .catch((error) => {
+    console.error("Error initializing indexes:", error);
+  });
+
 // views setup
 app.set("view engine", "jsx");
 app.set("views", "./views");

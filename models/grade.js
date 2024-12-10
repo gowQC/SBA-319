@@ -11,6 +11,8 @@ const gradeSchema = new mongoose.Schema(
   }
 );
 
+// No indexes can optimize this Schema when used with the routes designed for it
+
 const Grade = mongoose.model("Grade", gradeSchema);
 
 module.exports = Grade;

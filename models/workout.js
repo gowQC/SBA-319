@@ -12,6 +12,9 @@ const workoutSchema = new mongoose.Schema(
   }
 );
 
+// Index
+workoutSchema.index({ workout_name: 1 }, { unique: true });
+
 const Workout = mongoose.model("Workout", workoutSchema);
 
 module.exports = Workout;
